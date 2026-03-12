@@ -9,8 +9,13 @@ import static edu.wpi.first.units.Units.*;
 import com.ctre.phoenix6.swerve.SwerveModule.DriveRequestType;
 import com.ctre.phoenix6.swerve.SwerveRequest;
 import com.pathplanner.lib.auto.AutoBuilder;
+import com.pathplanner.lib.config.PIDConstants;
+import com.pathplanner.lib.config.RobotConfig;
+import com.pathplanner.lib.controllers.PPHolonomicDriveController;
 
 import edu.wpi.first.math.geometry.Rotation2d;
+import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.DriverStation.Alliance;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -39,11 +44,39 @@ public class RobotContainer {
 
     public final CommandSwerveDrivetrain drivetrain = TunerConstants.createDrivetrain();
 
+    
+
     private final SendableChooser<Command> autoChooser;
 
     public RobotContainer() {
         configureBindings();
         // Build an auto chooser. This will use Commands.none() as the default option.
+            // AutoBuilder configure — buildAutoChooser'dan ÖNCE olmalı
+        try {
+            RobotConfig config = RobotConfig.fromGUISettings();
+            AutoBuilder.configure(
+                () -> drivetrain.getState().Pose,
+                drivetrain::resetPose,
+                () -> drivetrain.getState().Speeds,
+                (speeds, feedforwards) -> drivetrain.setControl(
+                    new SwerveRequest.ApplyRobotSpeeds()
+                        .withSpeeds(speeds)
+                        .withWheelForceFeedforwardsX(feedforwards.robotRelativeForcesXNewtons())
+                        .withWheelForceFeedforwardsY(feedforwards.robotRelativeForcesYNewtons())
+                ),
+                new PPHolonomicDriveController(
+                    new PIDConstants(10, 0, 0),
+                    new PIDConstants(7, 0, 0)
+                ),
+                config,
+                () -> DriverStation.getAlliance().orElse(Alliance.Blue) == Alliance.Red,
+                drivetrain
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        
         autoChooser = AutoBuilder.buildAutoChooser();
 
         // Another option that allows you to specify the default auto by its name
