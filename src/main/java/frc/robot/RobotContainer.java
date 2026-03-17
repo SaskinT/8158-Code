@@ -19,15 +19,30 @@ import edu.wpi.first.wpilibj.DriverStation.Alliance;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.RobotModeTriggers;
-import edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine.Direction;
-
+import frc.robot.commands.ClimbDown;
+import frc.robot.commands.ClimbUp;
+import frc.robot.commands.Eject;
+import frc.robot.commands.Intake;
+import frc.robot.commands.LaunchSequence;
 import frc.robot.generated.TunerConstants;
+import static frc.robot.Constants.OperatorConstants.*;
+
 import frc.robot.subsystems.CommandSwerveDrivetrain;
+import frc.robot.subsystems.ClimbSubsystem;
+import frc.robot.subsystems.FuelSubsystem;
 
 public class RobotContainer {
+
+    private final FuelSubsystem fuelsubsystem = new FuelSubsystem();
+    private final ClimbSubsystem climbsubsystem = new ClimbSubsystem();
+    public final CommandSwerveDrivetrain drivetrain = TunerConstants.createDrivetrain();
+
+    private final CommandXboxController joystick = new CommandXboxController(DRIVER_CONTROLLER_PORT);
+
+    private final SendableChooser<Command> autoChooser;
+
     private double MaxSpeed = 1.0 * TunerConstants.kSpeedAt12Volts.in(MetersPerSecond); // kSpeedAt12Volts desired top speed
     private double MaxAngularRate = RotationsPerSecond.of(0.75).in(RadiansPerSecond); // 3/4 of a rotation per second max angular velocity
 
@@ -39,19 +54,11 @@ public class RobotContainer {
     private final SwerveRequest.PointWheelsAt point = new SwerveRequest.PointWheelsAt();
 
     private final Telemetry logger = new Telemetry(MaxSpeed);
-
-    private final CommandXboxController joystick = new CommandXboxController(0);
-
-    public final CommandSwerveDrivetrain drivetrain = TunerConstants.createDrivetrain();
-
-    
-
-    private final SendableChooser<Command> autoChooser;
-
+  
     public RobotContainer() {
         configureBindings();
         // Build an auto chooser. This will use Commands.none() as the default option.
-            // AutoBuilder configure — buildAutoChooser'dan ÖNCE olmalı
+
         try {
             RobotConfig config = RobotConfig.fromGUISettings();
             AutoBuilder.configure(
@@ -115,17 +122,28 @@ public class RobotContainer {
             point.withModuleDirection(new Rotation2d(-joystick.getLeftY(), -joystick.getLeftX()))
         ));
 
-        // Run SysId routines when holding back/start and X/Y.
-        // Note that each routine should be run exactly once in a single log.
-        joystick.back().and(joystick.y()).whileTrue(drivetrain.sysIdDynamic(Direction.kForward));
-        joystick.back().and(joystick.x()).whileTrue(drivetrain.sysIdDynamic(Direction.kReverse));
-        joystick.start().and(joystick.y()).whileTrue(drivetrain.sysIdQuasistatic(Direction.kForward));
-        joystick.start().and(joystick.x()).whileTrue(drivetrain.sysIdQuasistatic(Direction.kReverse));
-
         // Reset the field-centric heading on left bumper press.
         joystick.leftBumper().onTrue(drivetrain.runOnce(drivetrain::seedFieldCentric));
 
         drivetrain.registerTelemetry(logger::telemeterize);
+
+        // While the left bumper on operator controller is held, intake Fuel
+        joystick.leftBumper().whileTrue(new Intake(fuelsubsystem));
+        // While the right bumper on the operator controller is held, spin up for 1
+        // second, then launch fuel. When the button is released, stop.
+        joystick.rightBumper().whileTrue(new LaunchSequence(fuelsubsystem));
+        // While the A button is held on the operator controller, eject fuel back out
+        // the intake
+        joystick.a().whileTrue(new Eject(fuelsubsystem));
+        // While the down arrow on the directional pad is held it will unclimb the robot
+        joystick.povDown().whileTrue(new ClimbDown(climbsubsystem));
+        // While the up arrow on the directional pad is held it will cimb the robot
+        joystick.povUp().whileTrue(new ClimbUp(climbsubsystem));
+
+        fuelsubsystem.setDefaultCommand(fuelsubsystem.run(() -> fuelsubsystem.stop()));
+
+        climbsubsystem.setDefaultCommand(climbsubsystem.run(() -> climbsubsystem.stop()));
+
     }
 
     public Command getAutonomousCommand() {
