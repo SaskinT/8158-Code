@@ -1,38 +1,29 @@
 package frc.robot.subsystems;
 
 import com.revrobotics.spark.SparkLowLevel.MotorType;
-import com.revrobotics.spark.config.SparkMaxConfig;
-import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
 import com.revrobotics.spark.SparkMax;
-
+import com.revrobotics.spark.SparkBase.PersistMode;
+import com.revrobotics.spark.SparkBase.ResetMode;
+import com.revrobotics.spark.config.SparkMaxConfig;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-
-import static frc.robot.Constants.ClimbConstatns.*;
+import static frc.robot.Constants.ClimbConstants.*;
 
 public class ClimbSubsystem extends SubsystemBase {
-  private final SparkMax climberMotor;
+  private final SparkMax m_climberMotor = new SparkMax(CLIMBER_MOTOR_ID, MotorType.kBrushless);
 
   public ClimbSubsystem() {
-
-    climberMotor = new SparkMax(CLIMBER_MOTOR_ID, MotorType.kBrushless);
     SparkMaxConfig climbConfig = new SparkMaxConfig();
     climbConfig.smartCurrentLimit(CLIMBER_MOTOR_CURRENT_LIMIT);
-    climbConfig.idleMode(IdleMode.kBrake);
-
+    
+    // Uyarıları önlemek için yeni API kullanımı
+    m_climberMotor.configure(climbConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
   }
 
-  // A method to set the percentage of the climber
-  public void setClimber(double power) {
-    climberMotor.set(power);
+  public void setClimber(double speed) {
+    m_climberMotor.set(speed);
   }
 
-  // A method to stop the climber
   public void stop() {
-    climberMotor.set(0);
-  }
-
-  @Override
-  public void periodic() {
-    // This method will be called once per scheduler run
+    m_climberMotor.stopMotor();
   }
 }
