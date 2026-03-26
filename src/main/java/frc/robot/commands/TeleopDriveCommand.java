@@ -20,8 +20,8 @@ import static edu.wpi.first.units.Units.RotationsPerSecond;
 
 public class TeleopDriveCommand extends Command {
 
-    private static final double MAX_SPEED = TunerConstants.kSpeedAt12Volts.in(MetersPerSecond);
-    private static final double MAX_ANGULAR_RATE = RotationsPerSecond.of(0.75).in(RadiansPerSecond);
+    private static final double MaxSpeed = TunerConstants.kSpeedAt12Volts.in(MetersPerSecond);
+    private static final double MaxAngularRate = RotationsPerSecond.of(0.75).in(RadiansPerSecond);
 
     // Align PID — yaw'ı sıfırlamaya çalışır
     private static final double ALIGN_KP = 0.05;
@@ -31,10 +31,9 @@ public class TeleopDriveCommand extends Command {
     private final VisionSubsystem vision;
     private final CommandXboxController joystick;
 
-    private final SwerveRequest.FieldCentric driveRequest = new SwerveRequest.FieldCentric()
-        .withDeadband(MAX_SPEED * 0.1)
-        .withRotationalDeadband(MAX_ANGULAR_RATE * 0.1)
-        .withDriveRequestType(DriveRequestType.OpenLoopVoltage);
+    private final SwerveRequest.FieldCentric drive = new SwerveRequest.FieldCentric()
+            .withDeadband(MaxSpeed * 0.1).withRotationalDeadband(MaxAngularRate * 0.1)
+            .withDriveRequestType(DriveRequestType.OpenLoopVoltage);
 
     private final PIDController alignPID = new PIDController(ALIGN_KP, 0, 0.001);
 
@@ -56,21 +55,20 @@ public class TeleopDriveCommand extends Command {
     
     @Override
     public void execute() {
-    double velocityY = -joystick.getLeftX() * MAX_SPEED;
-    double velocityX = -joystick.getLeftY() * MAX_SPEED;
+    double velocityY = -joystick.getLeftX() * MaxSpeed;
+    double velocityX = -joystick.getLeftY() * MaxSpeed;
     double rotationalRate;
     
-            if (vision.isTargetVisible() && joystick.leftTrigger().getAsBoolean()) {
-                // Sağ bumper'a basılıyken ve tag görünüyorsa align ol
+            if (vision.isTargetVisible()) {
                 rotationalRate = alignPID.calculate(vision.getTargetYaw());
-                rotationalRate = MathUtil.clamp(rotationalRate, -MAX_ANGULAR_RATE, MAX_ANGULAR_RATE);
+                rotationalRate = MathUtil.clamp(rotationalRate, -MaxAngularRate, MaxAngularRate);
             } else {
         // Diğer her durumda normal joystick
-        rotationalRate = -joystick.getRightX() * MAX_ANGULAR_RATE;
+        rotationalRate = -joystick.getRightX() * MaxAngularRate;
     }
     
     drivetrain.setControl(
-        driveRequest
+        drive
         .withVelocityX(velocityX)
         .withVelocityY(velocityY)
         .withRotationalRate(rotationalRate)
