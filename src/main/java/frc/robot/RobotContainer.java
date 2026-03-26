@@ -30,8 +30,8 @@ import frc.robot.commands.LaunchSequence;
 import frc.robot.generated.TunerConstants;
 import static frc.robot.Constants.OperatorConstants.*;
 
-import frc.robot.subsystems.CommandSwerveDrivetrain;
 import frc.robot.subsystems.ClimbSubsystem;
+import frc.robot.subsystems.CommandSwerveDrivetrain;
 import frc.robot.subsystems.FuelSubsystem;
 
 public class RobotContainer {
@@ -59,6 +59,8 @@ public class RobotContainer {
     private final SwerveRequest.PointWheelsAt point = new SwerveRequest.PointWheelsAt();
 
     private final Telemetry logger = new Telemetry(MaxSpeed);
+
+    public static boolean targetVisible = false;
 
     public RobotContainer() {
         configureBindings();

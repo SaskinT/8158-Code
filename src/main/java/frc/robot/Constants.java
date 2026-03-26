@@ -1,5 +1,7 @@
 package frc.robot;
 
+import org.photonvision.PhotonCamera;
+
 public final class Constants {
     public static final class FuelConstants {
         public static final int LEFT_INTAKE_LAUNCHER_MOTOR_ID = 12;
@@ -25,5 +27,9 @@ public final class Constants {
 
     public static final class OperatorConstants {
         public static final int DRIVER_CONTROLLER_PORT = 0;
+    }
+    
+    public static final class VisionConstants {
+        public static final PhotonCamera camera = new PhotonCamera("OV2311");
     }
 }
