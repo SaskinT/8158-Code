@@ -63,8 +63,6 @@ public class RobotContainer {
 
     private final Telemetry logger = new Telemetry(MaxSpeed);
 
-    private final VisionSubsystem camera = new VisionSubsystem(VisionConstants.camera);
-
     public RobotContainer() {
         configureBindings();
 
