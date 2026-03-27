@@ -26,7 +26,7 @@ public class Eject extends Command {
   public void initialize() {
     fuelSubsystem
         .setIntakeLauncherRoller(
-             -1 * SmartDashboard.getNumber("Intaking intake roller value", INTAKE_EJECT_PERCENT));
+            SmartDashboard.getNumber("Intaking intake roller value", INTAKE_EJECT_PERCENT));
      fuelSubsystem.setFeederRoller(SmartDashboard.getNumber("Intaking intake roller value", INDEXER_LAUNCHING_PERCENT));
   }
 

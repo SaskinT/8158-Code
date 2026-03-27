@@ -36,4 +36,3 @@ public class VisionSubsystem extends SubsystemBase {
     public boolean isTargetVisible() { return targetVisible; }
     public double getTargetYaw() { return targetYaw; }
 }
-
