@@ -22,17 +22,20 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.RobotModeTriggers;
+import frc.robot.Constants.VisionConstants;
 import frc.robot.commands.ClimbDown;
 import frc.robot.commands.ClimbUp;
 import frc.robot.commands.Eject;
 import frc.robot.commands.Intake;
 import frc.robot.commands.LaunchSequence;
+import frc.robot.commands.TeleopDriveCommand;
 import frc.robot.generated.TunerConstants;
 import static frc.robot.Constants.OperatorConstants.*;
 
-import frc.robot.subsystems.CommandSwerveDrivetrain;
 import frc.robot.subsystems.ClimbSubsystem;
+import frc.robot.subsystems.CommandSwerveDrivetrain;
 import frc.robot.subsystems.FuelSubsystem;
+import frc.robot.subsystems.VisionSubsystem;
 
 public class RobotContainer {
 
@@ -59,6 +62,8 @@ public class RobotContainer {
     private final SwerveRequest.PointWheelsAt point = new SwerveRequest.PointWheelsAt();
 
     private final Telemetry logger = new Telemetry(MaxSpeed);
+
+    private final VisionSubsystem camera = new VisionSubsystem(VisionConstants.camera);
 
     public RobotContainer() {
         configureBindings();
@@ -102,6 +107,7 @@ public class RobotContainer {
             )
         );
 
+        joystick.leftTrigger().onTrue(new TeleopDriveCommand(drivetrain, camera, joystick));
         
         joystick.rightTrigger().whileTrue(drivetrain.applyRequest(() ->
             drive.withVelocityX(-joystick.getLeftY() * SlowSpeed)

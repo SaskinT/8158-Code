@@ -52,17 +52,22 @@ public class Telemetry {
 
     
     private final NetworkTable m_driveStateTable = m_inst.getTable("DriveState");
+
     private final StructPublisher<Pose2d> m_drivePose = m_driveStateTable.getStructTopic("Pose", Pose2d.struct).publish();
     private final StructPublisher<ChassisSpeeds> m_driveSpeeds = m_driveStateTable.getStructTopic("Speeds", ChassisSpeeds.struct).publish();
+
     private final StructArrayPublisher<SwerveModuleState> m_driveModuleStates = m_driveStateTable.getStructArrayTopic("ModuleStates", SwerveModuleState.struct).publish();
     private final StructArrayPublisher<SwerveModuleState> m_driveModuleTargets = m_driveStateTable.getStructArrayTopic("ModuleTargets", SwerveModuleState.struct).publish();
     private final StructArrayPublisher<SwerveModulePosition> m_driveModulePositions = m_driveStateTable.getStructArrayTopic("ModulePositions", SwerveModulePosition.struct).publish();
+
     private final DoublePublisher m_driveTimestamp = m_driveStateTable.getDoubleTopic("Timestamp").publish();
     private final DoublePublisher m_driveOdometryFrequency = m_driveStateTable.getDoubleTopic("OdometryFrequency").publish();
 
     
     private final NetworkTable m_table = m_inst.getTable("Pose");
+
     private final DoubleArrayPublisher m_fieldPub = m_table.getDoubleArrayTopic("robotPose").publish();
+    
     private final StringPublisher m_fieldTypePub = m_table.getStringTopic(".type").publish();
 
     
