@@ -9,6 +9,7 @@ import static edu.wpi.first.units.Units.*;
 import com.ctre.phoenix6.swerve.SwerveModule.DriveRequestType;
 import com.ctre.phoenix6.swerve.SwerveRequest;
 import com.pathplanner.lib.auto.AutoBuilder;
+import com.pathplanner.lib.auto.NamedCommands;
 import com.pathplanner.lib.config.PIDConstants;
 import com.pathplanner.lib.config.RobotConfig;
 import com.pathplanner.lib.controllers.PPHolonomicDriveController;
@@ -65,6 +66,26 @@ public class RobotContainer {
     private final VisionSubsystem camera = new VisionSubsystem(VisionConstants.camera);
 
     public RobotContainer() {
+
+        // /*
+        NamedCommands.registerCommand("Intake", (new Intake(fuelsubsystem)));
+
+
+ /*Denencek
+        NamedCommands.getCommand("Intake");
+        NamedCommands.registerCommand("Intake", getAutonomousCommand());
+*/
+     /* Denecek
+        NamedCommands.registerCommand("Intake", Commands.runOnce(()->{System.out.println("iceri alanzi");}));
+        NamedCommands.registerCommand("ClimbUP", Commands.runOnce(()->{System.out.println("climbdown");}));
+        NamedCommands.registerCommand("ClimbDown", Commands.runOnce(()->{System.out.println("Climbup");}));
+        NamedCommands.registerCommand("LaunchSequence", Commands.runOnce(()->{System.out.println("Atis");}));
+ */
+       /*Denenecek
+        new EventTrigger("Intake").onTrue(Commands.runOnce(()->{System.out.println("icerialanzi");}));
+
+        */
+
         configureBindings();
 
         try {
