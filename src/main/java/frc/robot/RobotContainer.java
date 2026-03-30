@@ -69,6 +69,9 @@ public class RobotContainer {
 
         // /*
         NamedCommands.registerCommand("Intake", (new Intake(fuelsubsystem)));
+        NamedCommands.registerCommand("LaunchSequence",(new LaunchSequence(fuelsubsystem)));
+        NamedCommands.registerCommand("ClimbUp", (new ClimbUp(climbsubsystem)));
+
 
 
  /*Denencek
