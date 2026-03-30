@@ -71,6 +71,7 @@ public class RobotContainer {
         NamedCommands.registerCommand("Intake", (new Intake(fuelsubsystem)));
         NamedCommands.registerCommand("LaunchSequence",(new LaunchSequence(fuelsubsystem)));
         NamedCommands.registerCommand("ClimbUp", (new ClimbUp(climbsubsystem)));
+        NamedCommands.registerCommand("ClimbDown", (new ClimbDown(climbsubsystem)));
 
 
 
@@ -84,10 +85,7 @@ public class RobotContainer {
         NamedCommands.registerCommand("ClimbDown", Commands.runOnce(()->{System.out.println("Climbup");}));
         NamedCommands.registerCommand("LaunchSequence", Commands.runOnce(()->{System.out.println("Atis");}));
  */
-       /*Denenecek
-        new EventTrigger("Intake").onTrue(Commands.runOnce(()->{System.out.println("icerialanzi");}));
 
-        */
 
         configureBindings();
 

@@ -26,8 +26,6 @@ public class SpinUp extends Command {
         m_fuelSubsystem.setIntakeLauncherRoller(
             SmartDashboard.getNumber("Launching launcher roller value", LAUNCHING_LAUNCHER_PERCENT));
         // FIX: Key düzeltildi — FuelSubsystem'deki key ile eşleşiyor
-        m_fuelSubsystem.setFeederRoller(
-            SmartDashboard.getNumber("Launching feeder roller value", INDEXER_SPIN_UP_PRE_LAUNCH_PERCENT));
     }
 
     // Launcher speed is set in initialize(), no updates needed

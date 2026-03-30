@@ -1,0 +1,75 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 3.5514404761904768,
+        "y": 4.002607142857143
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 3.3028141129601254,
+        "y": 3.9764359467276322
+      },
+      "isLocked": false,
+      "linkedName": "Mavi Orta Başlangıç "
+    },
+    {
+      "anchor": {
+        "x": 1.6402619047619056,
+        "y": 4.002607142857143
+      },
+      "prevControl": {
+        "x": 2.0073809523809527,
+        "y": 3.9918095238095246
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "mavi-orta-1-end"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [
+    {
+      "name": "Constraints Zone",
+      "minWaypointRelativePos": 0.0,
+      "maxWaypointRelativePos": 1.0,
+      "constraints": {
+        "maxVelocity": 1.0,
+        "maxAcceleration": 3.0,
+        "maxAngularVelocity": 540.0,
+        "maxAngularAcceleration": 720.0,
+        "nominalVoltage": 12.0,
+        "unlimited": false
+      }
+    }
+  ],
+  "pointTowardsZones": [],
+  "eventMarkers": [
+    {
+      "name": "ClimbDown",
+      "waypointRelativePos": 0.1935483870967885,
+      "endWaypointRelativePos": 0.6243176178659978,
+      "command": null
+    }
+  ],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 0.0
+  },
+  "reversed": false,
+  "folder": "BLUE",
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": 0.0
+  },
+  "useDefaultConstraints": true
+}
