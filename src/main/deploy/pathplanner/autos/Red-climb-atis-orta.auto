@@ -11,13 +11,13 @@
               {
                 "type": "wait",
                 "data": {
-                  "waitTime": 3.5
+                  "waitTime": 3.0
                 }
               },
               {
                 "type": "path",
                 "data": {
-                  "pathName": "Mavi-sol-climb-atış1"
+                  "pathName": "Red Atış orta 1"
                 }
               },
               {
@@ -27,6 +27,12 @@
                 }
               }
             ]
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 1.0
           }
         },
         {
@@ -51,13 +57,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "Mavi-sol-climb-atış2"
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 1.0
+            "pathName": "Red-Climb"
           }
         },
         {
@@ -83,6 +83,6 @@
     }
   },
   "resetOdom": true,
-  "folder": "Blue-Climb-Atış",
+  "folder": "Red-Climb-Atış",
   "choreoAuto": false
 }

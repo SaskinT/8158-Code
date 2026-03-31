@@ -1,0 +1,68 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 12.983432931098408,
+        "y": 5.6
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 13.983432931098408,
+        "y": 5.6
+      },
+      "isLocked": false,
+      "linkedName": "Red Sag Bump"
+    },
+    {
+      "anchor": {
+        "x": 14.600077445061991,
+        "y": 4.042469667355724
+      },
+      "prevControl": {
+        "x": 14.359857142857145,
+        "y": 5.633047619047619
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "Red orta atış"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [
+    {
+      "name": "Constraints Zone",
+      "minWaypointRelativePos": 0,
+      "maxWaypointRelativePos": 1.0,
+      "constraints": {
+        "maxVelocity": 2.0,
+        "maxAcceleration": 1.0,
+        "maxAngularVelocity": 540.0,
+        "maxAngularAcceleration": 720.0,
+        "nominalVoltage": 12.0,
+        "unlimited": false
+      }
+    }
+  ],
+  "pointTowardsZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 0.0
+  },
+  "reversed": false,
+  "folder": "Red-Atışclimb",
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": 0.0
+  },
+  "useDefaultConstraints": true
+}
