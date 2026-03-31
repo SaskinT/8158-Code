@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.6402619047619056,
-        "y": 4.002607142857143
+        "x": 1.8994047619047625,
+        "y": 4.05
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.6126540232431938,
-        "y": 3.7541362091887387
+        "x": 1.8485231653105778,
+        "y": 3.7482031944566856
       },
       "isLocked": false,
       "linkedName": "mavi-orta-1-end"
     },
     {
       "anchor": {
-        "x": 1.4243095238095247,
-        "y": 3.7110714285714286
+        "x": 1.4567023809523818,
+        "y": 3.80825
       },
       "prevControl": {
-        "x": 1.4051353990883402,
-        "y": 3.960335049946824
+        "x": 1.7927976151439342,
+        "y": 3.864293760131339
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "CLİMB-MAVİ"
     }
   ],
   "rotationTargets": [],
@@ -45,14 +45,7 @@
     }
   ],
   "pointTowardsZones": [],
-  "eventMarkers": [
-    {
-      "name": "Intake",
-      "waypointRelativePos": 0.0,
-      "endWaypointRelativePos": 1.0,
-      "command": null
-    }
-  ],
+  "eventMarkers": [],
   "globalConstraints": {
     "maxVelocity": 3.0,
     "maxAcceleration": 3.0,
@@ -63,13 +56,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": 180.0
   },
   "reversed": false,
-  "folder": "BLUE",
+  "folder": "BLUE-atış-climb",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": 179.23925035891565
   },
   "useDefaultConstraints": true
 }

@@ -3,14 +3,16 @@
   "robotLength": 0.82,
   "holonomicMode": true,
   "pathFolders": [
-    "RED",
-    "BLUE",
-    "TEST"
+    "BLUE-Sadece-atış",
+    "BLUE-atış-climb",
+    "Red-Sadece-Atış",
+    "Red-atış-Climb"
   ],
   "autoFolders": [
-    "RED",
-    "BLUE",
-    "TEST"
+    "BLUE-sadece-atış",
+    "Blue-Climb-Atış",
+    "Red-Climb-Atış",
+    "RED-sadece-atış"
   ],
   "defaultMaxVel": 3.0,
   "defaultMaxAccel": 3.0,

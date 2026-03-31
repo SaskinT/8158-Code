@@ -3,40 +3,40 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 3.5514404761904768,
-        "y": 4.002607142857143
+        "x": 2.5256666666666674,
+        "y": 4.5100952380952375
       },
       "prevControl": null,
       "nextControl": {
-        "x": 3.3028141129601254,
-        "y": 3.9764359467276322
+        "x": 2.3313095238095247,
+        "y": 3.613892857142857
       },
       "isLocked": false,
-      "linkedName": "Mavi Orta Başlangıç "
+      "linkedName": "Mavi-sol-climb-atış1-end"
     },
     {
       "anchor": {
-        "x": 1.6402619047619056,
-        "y": 4.002607142857143
+        "x": 1.4567023809523818,
+        "y": 3.80825
       },
       "prevControl": {
-        "x": 2.0073809523809527,
-        "y": 3.9918095238095246
+        "x": 2.3960952380952385,
+        "y": 3.5167142857142855
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "mavi-orta-1-end"
+      "linkedName": "CLİMB-MAVİ"
     }
   ],
   "rotationTargets": [],
   "constraintZones": [
     {
       "name": "Constraints Zone",
-      "minWaypointRelativePos": 0.0,
+      "minWaypointRelativePos": 0,
       "maxWaypointRelativePos": 1.0,
       "constraints": {
-        "maxVelocity": 1.0,
-        "maxAcceleration": 3.0,
+        "maxVelocity": 0.7,
+        "maxAcceleration": 1.0,
         "maxAngularVelocity": 540.0,
         "maxAngularAcceleration": 720.0,
         "nominalVoltage": 12.0,
@@ -45,14 +45,7 @@
     }
   ],
   "pointTowardsZones": [],
-  "eventMarkers": [
-    {
-      "name": "ClimbDown",
-      "waypointRelativePos": 0.1935483870967885,
-      "endWaypointRelativePos": 0.6243176178659978,
-      "command": null
-    }
-  ],
+  "eventMarkers": [],
   "globalConstraints": {
     "maxVelocity": 3.0,
     "maxAcceleration": 3.0,
@@ -63,13 +56,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": 180.0
   },
   "reversed": false,
-  "folder": "BLUE",
+  "folder": "BLUE-atış-climb",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": 164.358
   },
   "useDefaultConstraints": true
 }

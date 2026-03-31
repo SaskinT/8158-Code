@@ -11,53 +11,34 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "deneyenzi,1"
+                  "pathName": "Mavi-orta-climb-atış1"
+                }
+              },
+              {
+                "type": "wait",
+                "data": {
+                  "waitTime": 3.5
                 }
               },
               {
                 "type": "named",
                 "data": {
-                  "name": "Intake"
+                  "name": "ClimbDown"
                 }
               }
             ]
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 1.0
-          }
-        },
-        {
-          "type": "race",
-          "data": {
-            "commands": [
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "deneyenzi2"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "LaunchSequence"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 1.0
           }
         },
         {
           "type": "path",
           "data": {
-            "pathName": "deneyenzi3"
+            "pathName": "Mavi-orta-climb-atış2"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 1.0
           }
         },
         {
@@ -67,13 +48,13 @@
               {
                 "type": "wait",
                 "data": {
-                  "waitTime": 2.6
+                  "waitTime": 5.0
                 }
               },
               {
                 "type": "named",
                 "data": {
-                  "name": "Intake"
+                  "name": "ClimbUp"
                 }
               }
             ]
@@ -83,6 +64,6 @@
     }
   },
   "resetOdom": true,
-  "folder": "TEST",
+  "folder": "Blue-Climb-Atış",
   "choreoAuto": false
 }
