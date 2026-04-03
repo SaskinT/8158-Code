@@ -15,6 +15,7 @@ import com.pathplanner.lib.config.RobotConfig;
 import com.pathplanner.lib.controllers.PPHolonomicDriveController;
 
 import edu.wpi.first.math.geometry.Rotation2d;
+import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.DriverStation.Alliance;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
@@ -23,7 +24,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.RobotModeTriggers;
-import frc.robot.Constants.VisionConstants;
+import frc.robot.Constants.HubConstants;
 import frc.robot.commands.ClimbDown;
 import frc.robot.commands.ClimbUp;
 import frc.robot.commands.Eject;
@@ -47,7 +48,7 @@ public class RobotContainer {
 
     private SendableChooser<Command> autoChooser;
 
-    
+
     private double MaxSpeed = TunerConstants.kSpeedAt12Volts.in(MetersPerSecond);
     private double MaxAngularRate = RotationsPerSecond.of(0.75).in(RadiansPerSecond);
     private double LowAngularRate = RotationsPerSecond.of(0.65).in(RadiansPerSecond);
@@ -60,6 +61,8 @@ public class RobotContainer {
             .withDriveRequestType(DriveRequestType.OpenLoopVoltage);
     private final SwerveRequest.SwerveDriveBrake brake = new SwerveRequest.SwerveDriveBrake();
     private final SwerveRequest.PointWheelsAt point = new SwerveRequest.PointWheelsAt();
+    private final SwerveRequest.FieldCentricFacingAngle driveAtAngle = new SwerveRequest.FieldCentricFacingAngle()
+            .withHeadingPID(7.0, 0, 0);
 
     private final Telemetry logger = new Telemetry(MaxSpeed);
 
@@ -70,7 +73,6 @@ public class RobotContainer {
         NamedCommands.registerCommand("LaunchSequence",(new LaunchSequence(fuelsubsystem)));
         NamedCommands.registerCommand("ClimbUp", (new ClimbUp(climbsubsystem)));
         NamedCommands.registerCommand("ClimbDown", (new ClimbDown(climbsubsystem)));
-
 
 
  /*Denencek
@@ -115,6 +117,9 @@ public class RobotContainer {
         }
 
         SmartDashboard.putData("Auto Chooser", autoChooser != null ? autoChooser : new SendableChooser<>());
+
+
+        
     }
 
     private void configureBindings() {
@@ -131,6 +136,13 @@ public class RobotContainer {
             drive.withVelocityX(-joystick.getLeftY() * SlowSpeed)
                 .withVelocityY(-joystick.getLeftX() * SlowSpeed)
                 .withRotationalRate(-joystick.getRightX() * LowAngularRate)
+        ));
+
+        joystick.leftTrigger().whileTrue(drivetrain.applyRequest(() -> 
+                driveAtAngle
+                    .withVelocityX(-joystick.getLeftY() * MaxSpeed)
+                    .withVelocityY(-joystick.getLeftX() * MaxSpeed)
+                    .withTargetDirection(drivetrain.getAngleToTarget(HubConstants.hubTranslation))
         ));
 
         final var idle = new SwerveRequest.Idle();
