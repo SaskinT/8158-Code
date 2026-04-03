@@ -16,20 +16,34 @@
     },
     {
       "anchor": {
-        "x": 14.600077445061991,
-        "y": 4.042469667355724
+        "x": 14.3,
+        "y": 4.0
       },
       "prevControl": {
-        "x": 13.600077445061991,
-        "y": 4.042469667355724
+        "x": 13.3,
+        "y": 4.0
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "Red orta atış"
+      "linkedName": null
     }
   ],
   "rotationTargets": [],
-  "constraintZones": [],
+  "constraintZones": [
+    {
+      "name": "Constraints Zone",
+      "minWaypointRelativePos": 0,
+      "maxWaypointRelativePos": 0.9841584158415843,
+      "constraints": {
+        "maxVelocity": 1.0,
+        "maxAcceleration": 1.5,
+        "maxAngularVelocity": 540.0,
+        "maxAngularAcceleration": 720.0,
+        "nominalVoltage": 12.0,
+        "unlimited": false
+      }
+    }
+  ],
   "pointTowardsZones": [],
   "eventMarkers": [],
   "globalConstraints": {

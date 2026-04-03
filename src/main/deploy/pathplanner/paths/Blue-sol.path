@@ -3,47 +3,33 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 3.551,
-        "y": 4.05
+        "x": 3.5514404761904768,
+        "y": 6.64802380952381
       },
       "prevControl": null,
       "nextControl": {
-        "x": 3.302373636769649,
-        "y": 4.023828803870489
+        "x": 3.4434642857142865,
+        "y": 6.19452380952381
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 1.867011904761906,
-        "y": 4.05
+        "x": 2.83879761904762,
+        "y": 5.4710833333333335
       },
       "prevControl": {
-        "x": 2.7740119047619065,
-        "y": 4.04579761904762
+        "x": 2.7848095238095247,
+        "y": 5.935380952380952
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "mavi-sol-end"
     }
   ],
   "rotationTargets": [],
-  "constraintZones": [
-    {
-      "name": "Constraints Zone",
-      "minWaypointRelativePos": 0.0,
-      "maxWaypointRelativePos": 1.0,
-      "constraints": {
-        "maxVelocity": 1.5,
-        "maxAcceleration": 1.5,
-        "maxAngularVelocity": 540.0,
-        "maxAngularAcceleration": 720.0,
-        "nominalVoltage": 12.0,
-        "unlimited": false
-      }
-    }
-  ],
+  "constraintZones": [],
   "pointTowardsZones": [],
   "eventMarkers": [],
   "globalConstraints": {
@@ -56,13 +42,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 180.0
+    "rotation": 137.0454084888872
   },
   "reversed": false,
-  "folder": "BLUE-Sadece-atış",
+  "folder": "Mavi-climb",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": -179.60151543562623
+    "rotation": 179.08931284823134
   },
   "useDefaultConstraints": true
 }

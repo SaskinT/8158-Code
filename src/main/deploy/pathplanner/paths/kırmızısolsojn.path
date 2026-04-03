@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 12.94536904761905,
-        "y": 1.42197619047619
+        "x": 14.079,
+        "y": 2.5
       },
       "prevControl": null,
       "nextControl": {
-        "x": 13.658011904761906,
-        "y": 1.8646785714285725
+        "x": 14.176297619047618,
+        "y": 4.348130952380952
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 14.079,
-        "y": 2.5
+        "x": 15.42882142857143,
+        "y": 4.013404761904762
       },
       "prevControl": {
-        "x": 13.625499999999999,
-        "y": 2.240857142857143
+        "x": 14.208690476190478,
+        "y": 4.034999999999999
       },
       "nextControl": null,
       "isLocked": false,
@@ -56,13 +56,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -29.427456403189783
+    "rotation": -1.5481576989777923
   },
   "reversed": false,
   "folder": "Red-Atışclimb",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": -35.22295766133849
   },
   "useDefaultConstraints": true
 }

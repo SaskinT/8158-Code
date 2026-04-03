@@ -7,7 +7,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "Mavi-Sağ-SadeceAtış"
+            "pathName": "blueorta"
           }
         },
         {
@@ -17,7 +17,7 @@
               {
                 "type": "wait",
                 "data": {
-                  "waitTime": 4.0
+                  "waitTime": 5.0
                 }
               },
               {
@@ -33,6 +33,6 @@
     }
   },
   "resetOdom": true,
-  "folder": "BLUE-sadece-atış",
+  "folder": "Blue",
   "choreoAuto": false
 }

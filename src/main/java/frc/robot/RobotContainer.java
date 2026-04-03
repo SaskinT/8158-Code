@@ -30,13 +30,11 @@ import frc.robot.commands.Eject;
 import frc.robot.commands.Intake;
 import frc.robot.commands.LaunchSequence;
 import frc.robot.generated.TunerConstants;
-import frc.robot.commands.TeleopDriveCommand;
 import static frc.robot.Constants.OperatorConstants.*;
 
 import frc.robot.subsystems.CommandSwerveDrivetrain;
 import frc.robot.subsystems.ClimbSubsystem;
 import frc.robot.subsystems.FuelSubsystem;
-import frc.robot.subsystems.VisionSubsystem;
 
 public class RobotContainer {
 
@@ -52,6 +50,7 @@ public class RobotContainer {
     
     private double MaxSpeed = TunerConstants.kSpeedAt12Volts.in(MetersPerSecond);
     private double MaxAngularRate = RotationsPerSecond.of(0.75).in(RadiansPerSecond);
+    private double LowAngularRate = RotationsPerSecond.of(0.65).in(RadiansPerSecond);
 
     
     private double SlowSpeed = MaxSpeed * 0.35;
@@ -63,7 +62,6 @@ public class RobotContainer {
     private final SwerveRequest.PointWheelsAt point = new SwerveRequest.PointWheelsAt();
 
     private final Telemetry logger = new Telemetry(MaxSpeed);
-    private final VisionSubsystem camera = new VisionSubsystem(VisionConstants.camera);
 
     public RobotContainer() {
 
@@ -76,7 +74,7 @@ public class RobotContainer {
 
 
  /*Denencek
-        NamedCommands.getCommand("Intake");
+        NamedCommands.getCommand("Intake");%
         NamedCommands.registerCommand("Intake", getAutonomousCommand());
 */
      /* Denecek
@@ -132,7 +130,7 @@ public class RobotContainer {
         joystick.rightTrigger().whileTrue(drivetrain.applyRequest(() ->
             drive.withVelocityX(-joystick.getLeftY() * SlowSpeed)
                 .withVelocityY(-joystick.getLeftX() * SlowSpeed)
-                .withRotationalRate(-joystick.getRightX() * MaxAngularRate)
+                .withRotationalRate(-joystick.getRightX() * LowAngularRate)
         ));
 
         final var idle = new SwerveRequest.Idle();
@@ -148,8 +146,6 @@ public class RobotContainer {
         ));
 
         joystick.start().onTrue(drivetrain.runOnce(drivetrain::seedFieldCentric));
-        joystick.leftTrigger().onTrue(new TeleopDriveCommand(drivetrain, camera, joystick));
-
         drivetrain.registerTelemetry(logger::telemeterize);
 
         

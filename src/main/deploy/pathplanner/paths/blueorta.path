@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.8994047619047625,
-        "y": 4.05
+        "x": 3.573,
+        "y": 4.035
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.8485231653105778,
-        "y": 3.7482031944566856
+        "x": 3.292261904761905,
+        "y": 4.078190476190477
       },
       "isLocked": false,
-      "linkedName": "mavi-orta-1-end"
+      "linkedName": null
     },
     {
       "anchor": {
-        "x": 1.3811190476190487,
-        "y": 3.7434642857142855
+        "x": 2.256,
+        "y": 4.035
       },
       "prevControl": {
-        "x": 1.717214281810601,
-        "y": 3.7995080458456245
+        "x": 2.6015238095238096,
+        "y": 4.067392857142857
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "CLİMB-MAVİ"
+      "linkedName": null
     }
   ],
   "rotationTargets": [],
@@ -35,8 +35,8 @@
       "minWaypointRelativePos": 0,
       "maxWaypointRelativePos": 1.0,
       "constraints": {
-        "maxVelocity": 0.5,
-        "maxAcceleration": 0.5,
+        "maxVelocity": 0.7,
+        "maxAcceleration": 0.7,
         "maxAngularVelocity": 540.0,
         "maxAngularAcceleration": 720.0,
         "nominalVoltage": 12.0,
@@ -59,10 +59,10 @@
     "rotation": 180.0
   },
   "reversed": false,
-  "folder": "BLUE-atış-climb",
+  "folder": "Mavi-climb",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 179.23925035891565
+    "rotation": 180.0
   },
   "useDefaultConstraints": true
 }

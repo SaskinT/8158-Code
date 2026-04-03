@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 12.94536904761905,
-        "y": 1.42197619047619
+        "x": 7.698,
+        "y": 3.5
       },
       "prevControl": null,
       "nextControl": {
-        "x": 13.658011904761906,
-        "y": 1.8646785714285725
+        "x": 5.9701071428571435,
+        "y": 2.0158452380952387
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 14.079,
-        "y": 2.5
+        "x": 2.1056963454114457,
+        "y": 4.022149291903742
       },
       "prevControl": {
-        "x": 13.625499999999999,
-        "y": 2.240857142857143
+        "x": 2.4620177739828737,
+        "y": 1.5494945299989795
       },
       "nextControl": null,
       "isLocked": false,
@@ -32,11 +32,11 @@
   "constraintZones": [
     {
       "name": "Constraints Zone",
-      "minWaypointRelativePos": 0,
-      "maxWaypointRelativePos": 1.0,
+      "minWaypointRelativePos": 0.3559405940594031,
+      "maxWaypointRelativePos": 0.5440594059405962,
       "constraints": {
         "maxVelocity": 2.0,
-        "maxAcceleration": 1.0,
+        "maxAcceleration": 3.0,
         "maxAngularVelocity": 540.0,
         "maxAngularAcceleration": 720.0,
         "nominalVoltage": 12.0,
@@ -56,13 +56,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -29.427456403189783
+    "rotation": 180.0
   },
   "reversed": false,
-  "folder": "Red-Atışclimb",
+  "folder": ".mavi",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": 90.0
   },
   "useDefaultConstraints": true
 }

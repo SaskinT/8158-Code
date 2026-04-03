@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.5256666666666674,
-        "y": 4.5100952380952375
+        "x": 2.256,
+        "y": 4.035
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.3313095238095247,
-        "y": 3.613892857142857
+        "x": 1.7158452380952385,
+        "y": 4.056595238095238
       },
       "isLocked": false,
-      "linkedName": "Mavi-sol-climb-atış1-end"
+      "linkedName": null
     },
     {
       "anchor": {
-        "x": 1.3811190476190487,
-        "y": 3.7434642857142855
+        "x": 0.9682832821763996,
+        "y": 4.035
       },
       "prevControl": {
-        "x": 2.320511904761905,
-        "y": 3.451928571428571
+        "x": 1.7025213774144938,
+        "y": 4.067392857142857
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "CLİMB-MAVİ"
+      "linkedName": null
     }
   ],
   "rotationTargets": [],
@@ -35,8 +35,8 @@
       "minWaypointRelativePos": 0,
       "maxWaypointRelativePos": 1.0,
       "constraints": {
-        "maxVelocity": 0.7,
-        "maxAcceleration": 1.0,
+        "maxVelocity": 1.5,
+        "maxAcceleration": 0.5,
         "maxAngularVelocity": 540.0,
         "maxAngularAcceleration": 720.0,
         "nominalVoltage": 12.0,
@@ -59,10 +59,10 @@
     "rotation": 180.0
   },
   "reversed": false,
-  "folder": "BLUE-atış-climb",
+  "folder": "Mavi-climb",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 164.358
+    "rotation": 180.0
   },
   "useDefaultConstraints": true
 }

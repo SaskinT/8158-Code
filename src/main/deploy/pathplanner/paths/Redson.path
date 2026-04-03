@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 3.605428571428572,
-        "y": 2.5
+        "x": 14.3,
+        "y": 3.9918095238095246
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.6444404761904767,
-        "y": 1.5299523809523805
+        "x": 14.683785714285715,
+        "y": 4.035
       },
       "isLocked": false,
-      "linkedName": "Mavi-Sağ-Bump"
+      "linkedName": null
     },
     {
       "anchor": {
-        "x": 2.514869047619049,
-        "y": 2.9228452380952388
+        "x": 15.482809523809527,
+        "y": 3.9918095238095246
       },
       "prevControl": {
-        "x": 1.7590357142857158,
-        "y": 2.382964285714286
+        "x": 15.2338362221926,
+        "y": 4.0144434603201535
       },
       "nextControl": null,
       "isLocked": false,
@@ -29,7 +29,21 @@
     }
   ],
   "rotationTargets": [],
-  "constraintZones": [],
+  "constraintZones": [
+    {
+      "name": "Constraints Zone",
+      "minWaypointRelativePos": 0,
+      "maxWaypointRelativePos": 1.0,
+      "constraints": {
+        "maxVelocity": 0.5,
+        "maxAcceleration": 1.0,
+        "maxAngularVelocity": 540.0,
+        "maxAngularAcceleration": 720.0,
+        "nominalVoltage": 12.0,
+        "unlimited": false
+      }
+    }
+  ],
   "pointTowardsZones": [],
   "eventMarkers": [],
   "globalConstraints": {
@@ -42,13 +56,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -144.63753811293094
+    "rotation": 0.0
   },
   "reversed": false,
-  "folder": "BLUE-Sadece-atış",
+  "folder": "Red-Atışclimb",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 179.80785666000392
+    "rotation": 0.0
   },
   "useDefaultConstraints": true
 }

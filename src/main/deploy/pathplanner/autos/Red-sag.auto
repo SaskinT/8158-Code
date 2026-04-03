@@ -11,38 +11,13 @@
               {
                 "type": "wait",
                 "data": {
-                  "waitTime": 3.5
-                }
-              },
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "Mavi-sol-climb-atış1"
+                  "waitTime": 1.5
                 }
               },
               {
                 "type": "named",
                 "data": {
-                  "name": "ClimbDown"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "deadline",
-          "data": {
-            "commands": [
-              {
-                "type": "wait",
-                "data": {
-                  "waitTime": 4.0
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "LaunchSequence"
+                  "name": "ClimbUp"
                 }
               }
             ]
@@ -51,13 +26,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "Mavi-sol-climb-atış2"
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 1.0
+            "pathName": "Red Atış sag 1"
           }
         },
         {
@@ -73,7 +42,26 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "ClimbUp"
+                  "name": "LaunchSequence"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "deadline",
+          "data": {
+            "commands": [
+              {
+                "type": "wait",
+                "data": {
+                  "waitTime": 3.0
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "ClimbDown"
                 }
               }
             ]
@@ -83,6 +71,6 @@
     }
   },
   "resetOdom": true,
-  "folder": "Blue-Climb-Atış",
+  "folder": "Red",
   "choreoAuto": false
 }

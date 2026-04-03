@@ -7,13 +7,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "Red Atış sag 1"
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 0
+            "pathName": "Red Atış sol 1"
           }
         },
         {
@@ -23,7 +17,7 @@
               {
                 "type": "wait",
                 "data": {
-                  "waitTime": 4.0
+                  "waitTime": 5.0
                 }
               },
               {
@@ -39,6 +33,6 @@
     }
   },
   "resetOdom": true,
-  "folder": "RED-sadece-atış",
+  "folder": "Red",
   "choreoAuto": false
 }

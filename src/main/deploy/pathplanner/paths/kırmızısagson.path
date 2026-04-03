@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 3.584,
-        "y": 5.6
+        "x": 14.0,
+        "y": 5.0
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.5688571428571443,
-        "y": 5.881392857142857
+        "x": 14.424642857142858,
+        "y": 4.596476190476191
       },
       "isLocked": false,
-      "linkedName": "Mavi-Bump-Sol"
+      "linkedName": null
     },
     {
       "anchor": {
-        "x": 2.5256666666666674,
-        "y": 4.5100952380952375
+        "x": 15.461214285714286,
+        "y": 3.9702142857142864
       },
       "prevControl": {
-        "x": 1.640261904761906,
-        "y": 4.995988095238094
+        "x": 14.461214285714286,
+        "y": 3.9702142857142864
       },
       "nextControl": null,
       "isLocked": false,
@@ -32,11 +32,11 @@
   "constraintZones": [
     {
       "name": "Constraints Zone",
-      "minWaypointRelativePos": 0,
-      "maxWaypointRelativePos": 0.9816831683168314,
+      "minWaypointRelativePos": 0.5029702970297032,
+      "maxWaypointRelativePos": 1.0,
       "constraints": {
-        "maxVelocity": 1.0,
-        "maxAcceleration": 1.0,
+        "maxVelocity": 0.5,
+        "maxAcceleration": 0.5,
         "maxAngularVelocity": 540.0,
         "maxAngularAcceleration": 720.0,
         "nominalVoltage": 12.0,
@@ -56,13 +56,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 164.35775354279127
+    "rotation": 0.0
   },
   "reversed": false,
-  "folder": "BLUE-atış-climb",
+  "folder": "Red-Atışclimb",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 180.0
+    "rotation": 0.0
   },
   "useDefaultConstraints": true
 }

@@ -3,15 +3,13 @@
   "robotLength": 0.82,
   "holonomicMode": true,
   "pathFolders": [
-    "BLUE-Sadece-atış",
-    "BLUE-atış-climb",
+    ".mavi",
+    "Mavi-climb",
     "Red-Atışclimb"
   ],
   "autoFolders": [
-    "BLUE-sadece-atış",
-    "Blue-Climb-Atış",
-    "Red-Climb-Atış",
-    "RED-sadece-atış"
+    "Blue",
+    "Red"
   ],
   "defaultMaxVel": 3.0,
   "defaultMaxAccel": 3.0,

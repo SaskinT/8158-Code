@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 12.983432931098408,
-        "y": 5.6
+        "x": 12.984322863632377,
+        "y": 6.622413011562724
       },
       "prevControl": null,
       "nextControl": {
-        "x": 13.983432931098408,
-        "y": 5.6
+        "x": 13.46454469443873,
+        "y": 5.176186821086534
       },
       "isLocked": false,
-      "linkedName": "Red Sag Bump"
+      "linkedName": null
     },
     {
       "anchor": {
-        "x": 14.600077445061991,
-        "y": 4.042469667355724
+        "x": 14.0,
+        "y": 5.0
       },
       "prevControl": {
-        "x": 14.359857142857145,
-        "y": 5.633047619047619
+        "x": 13.492511904761907,
+        "y": 5.507488095238094
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "Red orta atış"
+      "linkedName": null
     }
   ],
   "rotationTargets": [],
@@ -56,7 +56,7 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": 29.898901838614343
   },
   "reversed": false,
   "folder": "Red-Atışclimb",

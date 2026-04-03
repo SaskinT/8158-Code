@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 14.600077445061991,
-        "y": 4.042469667355724
+        "x": 2.8,
+        "y": 2.4
       },
       "prevControl": null,
       "nextControl": {
-        "x": 14.849169575885531,
-        "y": 4.3540427327075655
+        "x": 2.2881190476190487,
+        "y": 3.5491071428571423
       },
       "isLocked": false,
-      "linkedName": "Red orta atış"
+      "linkedName": "maviiortaatış"
     },
     {
       "anchor": {
-        "x": 15.21286904761905,
-        "y": 4.337333333333333
+        "x": 0.9276190476190485,
+        "y": 3.5167142857142863
       },
       "prevControl": {
-        "x": 14.95046312473043,
-        "y": 4.274955984127222
+        "x": 2.320511904761905,
+        "y": 3.559904761904762
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "Red-climb"
+      "linkedName": null
     }
   ],
   "rotationTargets": [],
@@ -35,7 +35,7 @@
       "minWaypointRelativePos": 0,
       "maxWaypointRelativePos": 1.0,
       "constraints": {
-        "maxVelocity": 0.5,
+        "maxVelocity": 1.5,
         "maxAcceleration": 0.5,
         "maxAngularVelocity": 540.0,
         "maxAngularAcceleration": 720.0,
@@ -56,13 +56,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": 180.0
   },
   "reversed": false,
-  "folder": "Red-Atışclimb",
+  "folder": "Mavi-climb",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": -138.4789790098541
   },
   "useDefaultConstraints": true
 }
